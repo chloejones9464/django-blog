@@ -6,7 +6,7 @@ from .models import About
 queryset = About.objects.all().order_by('-update_on').first()
 
 
-def about(request, about):
+def about_me(request, about):
     return render(
         request,
         "about/about.html",
