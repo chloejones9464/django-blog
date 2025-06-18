@@ -3,16 +3,17 @@ from .models import About
 
 # Create your views here.
 
-queryset = About.objects.all().order_by('-update_on').first()
 
+def about_me(request):
+    """
+    Renders the About page
+    """
+    about = About.objects.all().order_by('-updated_on').first()
 
-def about_me(request, about):
     return render(
         request,
         "about/about.html",
         {"about": about},
     )
-
-
 
 
